@@ -1,0 +1,16 @@
+﻿@model List<Person>
+
+@{ int i = 1;}
+    <form action="SearchPerson" method="post">
+
+        <select name="id" id="id">
+            @foreach (Person p in Model)
+            {
+                var s = p.url.Split('/');
+
+                <option value="@s[5]">@i @p.name</option>
+                i++;
+            }
+        </select>
+        <input type="submit"/>
+    </form>
